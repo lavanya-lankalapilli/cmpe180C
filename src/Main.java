@@ -1,9 +1,6 @@
 import com.sjsu.cmpe.sort.service.impl.QuickSortMultiThread;
 import com.sjsu.cmpe.sort.service.impl.QuickSortSingleThread;
 
-import java.nio.charset.Charset;
-import java.util.Random;
-
 public class Main {
     public static void main(String[] args) {
 
