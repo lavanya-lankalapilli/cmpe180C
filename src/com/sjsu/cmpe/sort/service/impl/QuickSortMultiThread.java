@@ -2,28 +2,24 @@ package com.sjsu.cmpe.sort.service.impl;
 import com.sjsu.cmpe.sort.service.Sort;
 import com.sjsu.cmpe.sort.service.utility.Utility;
 
-import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveAction;
 
-public class MultiThreadQuickSort implements Sort {
+public class QuickSortMultiThread implements Sort {
 
     Comparable array[];
     long executionTime = 0;
-    ForkJoinPool forkJoinPool;
     Utility utility;
 
-    public MultiThreadQuickSort(Comparable array[]) {
+    public QuickSortMultiThread(Comparable array[]) {
         this.array = array;
-        forkJoinPool = new ForkJoinPool();
         utility = new Utility();
     }
 
     @Override
     public void sort() {
         long startTime = System.currentTimeMillis();
-        if(array.length<100){
+        if (array.length < thresholdSize) {
             utility.selectionSort(array);
-            return;
         } else {
             int pivot = utility.partition(array, 0, array.length - 1);
             QuickSortTask leftTask = new QuickSortTask(array, 0, pivot - 1);

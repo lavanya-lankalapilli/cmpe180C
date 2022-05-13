@@ -22,14 +22,12 @@ public class Utility {
         array[r] = t;
     }
 
-    public void selectionSort(Comparable arr[])
-    {
+    public void selectionSort(Comparable arr[]) {
         int n = arr.length;
-        for (int i = 0; i < n-1; i++)
-        {
+        for (int i = 0; i < n - 1; i++) {
             int min_idx = i;
-            for (int j = i+1; j < n; j++)
-                if (arr[j].compareTo(arr[min_idx])<0)
+            for (int j = i + 1; j < n; j++)
+                if (arr[j].compareTo(arr[min_idx]) < 0)
                     min_idx = j;
             Comparable temp = arr[min_idx];
             arr[min_idx] = arr[i];
