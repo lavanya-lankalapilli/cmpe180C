@@ -10,8 +10,9 @@ public class MergeSortSingleThread implements Sort {
     long executionTime = 0;
     Utility utility;
 
-    MergeSortSingleThread(Comparable[] arr) {
+    public MergeSortSingleThread(Comparable[] arr) {
         this.arr = arr;
+        utility = new Utility();
     }
 
     public void sort() {
@@ -63,6 +64,7 @@ public class MergeSortSingleThread implements Sort {
         }
 
     }
+
     public long getExecutionTime() {
         return executionTime;
     }
